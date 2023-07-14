@@ -1,11 +1,17 @@
 #include<stdio.h>
+int k[105];
 int main()
 {
-    int a,b;
-    scanf("%d %d",&a,&b);
-    if(a%2==0 && b%2==0) printf("짝수+짝수=짝수");
-    else if(a%2==0 && b%2==1) printf("짝수+홀수=홀수");
-    else if(a%2==1 && b%2==1) printf("홀수+홀수=짝수");
-    else if(a%2==1 && b%2==0) printf("홀수+짝수=홀수");
+    int n,i;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&k[i]);
+        k[i+n] = k[i];
+    }
+    for(i=0;i<n*2;i++)
+    {
+        printf("%d\n",k[i]);
+    }
     return 0;
 }
