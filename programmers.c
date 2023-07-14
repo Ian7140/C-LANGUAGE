@@ -1,17 +1,14 @@
 #include<stdio.h>
-int k[105];
 int main()
 {
-    int n,i;
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
+    char number[105];
+    gets(number);
+    for(int i=0;i<strlen(number);i++)
     {
-        scanf("%d",&k[i]);
-        k[i+n] = k[i];
-    }
-    for(i=0;i<n*2;i++)
-    {
-        printf("%d\n",k[i]);
+        if(number[i]!=' ')
+        {
+            printf("%c",number[i]);
+        }
     }
     return 0;
 }
