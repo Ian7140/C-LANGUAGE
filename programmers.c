@@ -1,27 +1,28 @@
-#include <stdio.h>
-  
-int main() 
+#include<stdio.h>
+int height[100];
+int main()
 {
-    int n, i, j; 
-    char name[55][22];
-    int score[55], rank[55];
-  
-    scanf("%d", &n); 
-    for(i=1; i<=n; i++)
+    int a,b,i,j,number;
+    scanf("%d %d",&a,&b);
+    for(i=0;i<a;i++) scanf("%d", &height[i]);
+
+    for(i=0;i<a;i++)
     {
-        scanf("%s", name[i]); 
-        scanf("%d", &score[i]);
-        rank[i]=1;
+        for(j=0;j<a;j++)
+        {
+            if(height[i] < height[j])
+            {
+                number=height[i];
+                height[i]=height[j];
+                height[j] = number;
+            }
+        }
     }
-  
-    for(i=1; i<=n; i++) 
-        for(j=1; j<=n; j++)
-            if(score[i] < score[j]) 
-                rank[i]++; 
-              
-    for(i=1; i<=n; i++)
-        if(rank[i]==3) 
-            printf("%s", name[i]);
-      
-    return 0; 
+
+    for(i=0;i<a;i++)
+    {
+      printf("%d ",height[i]);
+      if((i+1)%b==0) printf("\n");
+    }
+    return 0;
 }
