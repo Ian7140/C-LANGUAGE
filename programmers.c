@@ -1,23 +1,27 @@
-#include<stdio.h>
-#include<string.h>
-char alphabet[30] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-int count[30]={0};
-int main()
+#include <stdio.h>
+  
+int main() 
 {
-    char sentence[100];
-    int n,i;
-    gets(sentence);
-    for(i=0;i<strlen(sentence);i++)
+    int n, i, j; 
+    char name[55][22];
+    int score[55], rank[55];
+  
+    scanf("%d", &n); 
+    for(i=1; i<=n; i++)
     {
-        if(sentence[i] >= 'a' && sentence[i] <= 'z')
-        {
-            count[sentence[i]-'a'] += 1;
-        }
+        scanf("%s", name[i]); 
+        scanf("%d", &score[i]);
+        rank[i]=1;
     }
-
-    for(i=0;i<26;i++)
-    {
-        printf("%c:%d\n",alphabet[i],count[i]);
-    }
-    return 0;
+  
+    for(i=1; i<=n; i++) 
+        for(j=1; j<=n; j++)
+            if(score[i] < score[j]) 
+                rank[i]++; 
+              
+    for(i=1; i<=n; i++)
+        if(rank[i]==3) 
+            printf("%s", name[i]);
+      
+    return 0; 
 }
