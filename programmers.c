@@ -1,28 +1,21 @@
 #include<stdio.h>
-int height[100];
+#include<string.h>
 int main()
 {
-    int a,b,i,j,number;
-    scanf("%d %d",&a,&b);
-    for(i=0;i<a;i++) scanf("%d", &height[i]);
-
-    for(i=0;i<a;i++)
+    char sentence[100];
+    int i,n,j;
+    scanf("%s",sentence);
+    for(i=0;i<strlen(sentence);i++)
     {
-        for(j=0;j<a;j++)
+        if(sentence[i] >= 65 && sentence[i] <= 90)
         {
-            if(height[i] < height[j])
-            {
-                number=height[i];
-                height[i]=height[j];
-                height[j] = number;
-            }
+            sentence[i]+= 32;
+        }
+        else if(sentence[i]>= 97 && sentence[i] <= 122)
+        {
+            sentence[i] -= 32;
         }
     }
-
-    for(i=0;i<a;i++)
-    {
-      printf("%d ",height[i]);
-      if((i+1)%b==0) printf("\n");
-    }
+    printf("%s",sentence);
     return 0;
 }
