@@ -1,21 +1,21 @@
 #include<stdio.h>
 #include<string.h>
-char sentence[25];
+char c[205];
 int main()
 {
-    int i,n;
-    scanf("%s",sentence);
-    for(i=0;i<strlen(sentence);i++)
+    int i,a=0,b=0;
+    scanf("%s",c);
+    for(i=0;i<strlen(c);i++)
     {
-      sentence[i]+=2;
-      printf("%c",sentence[i]);
-      sentence[i]-=2;
+        if(c[i]=='c' || c[i]=='C')
+        {
+            a++;
+            if(c[i+1]=='c' || c[i+1]=='C')
+            {
+                b++;
+            }
+        }
     }
-    printf("\n");
-    for(i=0;i<strlen(sentence);i++)
-    {
-      sentence[i]=(sentence[i]*7)%80+48;
-    }
-    printf("%s",sentence);
+    printf("%d\n%d",a,b);
     return 0;
 }
