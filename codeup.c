@@ -1,13 +1,21 @@
 #include<stdio.h>
 #include<string.h>
+char sentence[25];
 int main()
 {
-    char word[100];
-    int i,check=0;
-    scanf("%s",word);
-    if(strlen(word)== 4 && word[0]=='l' && word[1]=='o' && word[2]=='v' && word[3]=='e')
+    int i,n;
+    scanf("%s",sentence);
+    for(i=0;i<strlen(sentence);i++)
     {
-        printf("I love you.");
+      sentence[i]+=2;
+      printf("%c",sentence[i]);
+      sentence[i]-=2;
     }
+    printf("\n");
+    for(i=0;i<strlen(sentence);i++)
+    {
+      sentence[i]=(sentence[i]*7)%80+48;
+    }
+    printf("%s",sentence);
     return 0;
 }
