@@ -1,12 +1,11 @@
 #include<stdio.h>
 int main()
 {
-    char a,b;
-    scanf(" %c %c",&a,&b);
-    for(int i=0;;i++)
+    double a,b;
+    scanf("%lf %lf",&a,&b);
+    for(double i=a;i<=b;i+=0.01)
     {
-        printf("%c ",a+i);
-        if(a+i==b) break;
+        printf("%.2lf ",i);
     }
     return 0;
 }
