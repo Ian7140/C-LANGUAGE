@@ -1,20 +1,15 @@
 #include<stdio.h>
+#include<string.h>
 int main()
 {
-    int a,b;
-    scanf("%d %d",&a,&b);
-    if(a%2==0)
+    char word[15];
+    int i;
+    scanf("%s",word);
+    for(i=0;i<strlen(word);i++)
     {
-        for(int i=a+1;i<=b;i+=2)
+        if(word[i]=='t')
         {
-            printf("%d ",i);
-        }
-    }
-    else if(a%2==1)
-    {
-        for(int i=a;i<=b;i+=2)
-        {
-            printf("%d ",i);
+            printf("%d ",i+1);
         }
     }
     return 0;
