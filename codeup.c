@@ -1,10 +1,16 @@
 #include<stdio.h>
 int main()
 {
-  int a,b;
-  scanf("%06d %d",&a,&b);
-  a/=10000;
-  if(b==1 || b==2) printf("%d",2012-(1900+a)+1);
-  else if(b==3 || b==4) printf("%d",2012-(2000+a)+1);
-  return 0;
+    int a;
+    scanf("%d",&a);
+    a--;
+    if((2012-a)/100 == 19) 
+    {
+        printf("%d 1",(2012-a)-1900);
+    }
+    else if((2012-a)/100 == 20) 
+    {
+        printf("%d 3",(2012-a)-2000);
+    }
+    return 0;
 }
