@@ -1,16 +1,8 @@
 #include<stdio.h>
 int main()
 {
-    int a;
-    scanf("%d",&a);
-    a--;
-    if((2012-a)/100 == 19) 
-    {
-        printf("%d 1",(2012-a)-1900);
-    }
-    else if((2012-a)/100 == 20) 
-    {
-        printf("%d 3",(2012-a)-2000);
-    }
+    int a,b,c,i;
+    scanf("%d %d %d",&a,&b,&c);
+    printf("%d%d%02d",a,b,c);
     return 0;
 }
