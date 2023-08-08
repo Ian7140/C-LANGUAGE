@@ -19,6 +19,6 @@ int main()
           printf("%d ",number[i][j]);
         }
       printf("\n");
-    }
+    } //값 출력하기
   return 0;
 }
